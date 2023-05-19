@@ -174,7 +174,7 @@ resource "aws_instance" "worker-1" {
     instance_type = "t3a.medium"
         iam_instance_profile = module.iam.worker_profile_name
     vpc_security_group_ids = [aws_security_group.petclinic-kube-worker-sg.id, aws_security_group.petclinic-mutual-sg.id]
-    key_name = "firstkey"
+    key_name = "clarus"
     subnet_id = "subnet-073cd6cb8d60656c6"  # select own subnet_id of us-east-1a
     availability_zone = "us-east-1a"
     tags = {
@@ -193,7 +193,7 @@ resource "aws_instance" "worker-2" {
     iam_instance_profile = module.iam.worker_profile_name
     vpc_security_group_ids = [aws_security_group.petclinic-kube-worker-sg.id, aws_security_group.petclinic-mutual-sg.id]
     key_name = "clarus"
-    subnet_id = "subnet-c41ba589"  # select own subnet_id of us-east-1a
+    subnet_id = "subnet-073cd6cb8d60656c6"  # select own subnet_id of us-east-1a
     availability_zone = "us-east-1a"
     tags = {
         Name = "worker-2"
